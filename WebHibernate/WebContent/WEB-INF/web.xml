@@ -10,18 +10,21 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
+  <!--  OTRA MANERA DE ACCEDER AL SERVLET ERROR 
+  <error-page>
+    <error-code>404</error-code>
+    <location>/ServletError</location>
+  </error-page>
+  -->
+ 
   
+  <error-page>
+    <exception-type>javax.servlet.ServletException</exception-type>
+    <location>/ServletError</location>
+  </error-page>
+ 
   
-  <!-- PARA REDIRIGIR LOS ERRORES DEL SERVIDOR -->
-<error-page>
-	<error-code>404</error-code> <location>/ServletError</location> 
-</error-page> 
-<error-page> 
-	<exception-type>javax.servlet.ServletException</exception-type > 
-	<location>/ServletError</location> 
-</error-page>
-
-<servlet>
+  <servlet>
     <description>Servlet para controlar los errores</description>
     <display-name>ServletError</display-name>
     <servlet-name>ServletError</servlet-name>
@@ -32,9 +35,31 @@
     <url-pattern>/ServletError</url-pattern>
   </servlet-mapping>
   
-  <!-- provocar error de servlet lo comento -->
-   
+  
+  <!-- SERVLET PARA COMPARAR COMO HACER LO MISMO QUE EN EL .JSP EJEMPLO -->
    <servlet>
+    <description>Mostrar Hola Mundo</description>
+    <display-name>MostrarHolaMundo</display-name>
+    <servlet-name>MostrarHolaMundo</servlet-name>
+    <servlet-class>hibernateservlets.MostrarHolaMundo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MostrarHolaMundo</servlet-name>
+    <url-pattern>/MostrarHolaMundo</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description>Servlet para Buscar Empleado por id</description>
+    <display-name>BuscarEmpleado</display-name>
+    <servlet-name>BuscarEmpleado</servlet-name>
+    <servlet-class>hibernateservlets.BuscarEmpleado</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BuscarEmpleado</servlet-name>
+    <url-pattern>/BuscarEmpleado</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <description>Para Saber la ultima url a la que ha accedido</description>
     <display-name>ServiciosServlets</display-name>
     <servlet-name>ServiciosServlets</servlet-name>
@@ -44,8 +69,6 @@
     <servlet-name>ServiciosServlets</servlet-name>
     <url-pattern>/ServiciosServlets</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet>
     <description>Para BorrarCookies</description>
     <display-name>BorrarCookies</display-name>
@@ -150,16 +173,19 @@
     <servlet-name>SubirSueldo</servlet-name>
     <url-pattern>/SubirSueldo</url-pattern>
   </servlet-mapping>
+  
+  <!-- DECLARACION DEL JSP -->
   <servlet>
-    <description>Para Utilizar JDBC</description>
-    <display-name>Busqueda de empleados</display-name>
-    <servlet-name>BuscarEmpleado</servlet-name>
-    <servlet-class>hibernateservlets.BuscarEmpleado</servlet-class>
+    <description></description>
+    <display-name>Ejemplo</display-name>
+    <servlet-name>Ejemplo</servlet-name>
+    <jsp-file>/JSP/Ejemplo.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
-    <servlet-name>BuscarEmpleado</servlet-name>
-    <url-pattern>/BuscarEmpleado</url-pattern>
+    <servlet-name>Ejemplo</servlet-name>
+    <url-pattern>/Ejemplo</url-pattern>
   </servlet-mapping>
+  
   <filter>
     <filter-name>Filtro</filter-name>
     <filter-class>pruebafiltros.Filtro</filter-class>
@@ -202,4 +228,6 @@
   <session-config>
     <session-timeout>2</session-timeout>
   </session-config>
+  
+  
 </web-app>
