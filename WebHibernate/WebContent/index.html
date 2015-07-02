@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Mi primer proyecto Web</title>
+</head>
+<body>
+<p><font size = 5><b> Introducir el id del Departamento a buscar USANDO HIBERNATE:</b></font></p>
+<form action="hibernateservlet" method="get">
+<input type="text" name="nombre"/>
+<input type="submit" name="enviar"/>
+
+</form>
+</br></br></br></br>
+<p><font size = 5><b> Introducir el id del Empleado a buscar USANDO JDBC:</b></font></p>
+<form action="BuscarEmpleado" method="get">
+<input type="text" name="nombre"/>
+<input type="submit" name="enviar"/>
+
+</form>
+
+
+<p><font size = 5><b> Pulsar botón para subir sueldos</b></font></p>
+<form action="SubirSueldo" method="post">
+<!-- <input type="text" name="nombre"/>  -->
+<input type="submit" name="SubirSueldo"/>
+
+</form>
+
+
+
+</body>
+</html>

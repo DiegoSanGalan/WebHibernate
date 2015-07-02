@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>WebHibernate</display-name>
+  <welcome-file-list>
+    <welcome-file>Login.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+  
+  <!-- PARA REDIRIGIR LOS ERRORES DEL SERVIDOR -->
+<error-page>
+	<error-code>404</error-code> <location>/ServletError</location> 
+</error-page> 
+<error-page> 
+	<exception-type>javax.servlet.ServletException</exception-type > 
+	<location>/ServletError</location> 
+</error-page>
+
+<servlet>
+    <description>Servlet para controlar los errores</description>
+    <display-name>ServletError</display-name>
+    <servlet-name>ServletError</servlet-name>
+    <servlet-class>hibernateservlets.ServletError</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletError</servlet-name>
+    <url-pattern>/ServletError</url-pattern>
+  </servlet-mapping>
+  
+  <!-- provocar error de servlet lo comento -->
+   
+   <servlet>
+    <description>Para Saber la ultima url a la que ha accedido</description>
+    <display-name>ServiciosServlets</display-name>
+    <servlet-name>ServiciosServlets</servlet-name>
+    <servlet-class>hibernateservlets.ServiciosServlets</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServiciosServlets</servlet-name>
+    <url-pattern>/ServiciosServlets</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description>Para BorrarCookies</description>
+    <display-name>BorrarCookies</display-name>
+    <servlet-name>BorrarCookies</servlet-name>
+    <servlet-class>hibernateservlets.BorrarCookies</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BorrarCookies</servlet-name>
+    <url-pattern>/BorrarCookies</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>Para Calcular DC</description>
+    <display-name>EmpleadosPorDepartamento</display-name>
+    <servlet-name>EmpleadosPorDepartamento</servlet-name>
+    <servlet-class>hibernateservlets.EmpleadosPorDepartamento</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmpleadosPorDepartamento</servlet-name>
+    <url-pattern>/EmpleadosPorDepartamento</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>Para Calcular DC</description>
+    <display-name>CalculadoraDC</display-name>
+    <servlet-name>ObtenerDC</servlet-name>
+    <servlet-class>hibernateservlets.ObtenerDC</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ObtenerDC</servlet-name>
+    <url-pattern>/ObtenerDC</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>Para Hacer Login</description>
+    <display-name>Iniciar Sesion</display-name>
+    <servlet-name>Autenticacion</servlet-name>
+    <servlet-class>hibernateservlets.Autenticacion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Autenticacion</servlet-name>
+    <url-pattern>/Autenticacion</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>Para Hacer SLogout</description>
+    <display-name>Cerrar Sesion</display-name>
+    <servlet-name>SLogout</servlet-name>
+    <servlet-class>hibernateservlets.SLogout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SLogout</servlet-name>
+    <url-pattern>/SLogout</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>Para ver usuarios activos</description>
+    <display-name>ver sesiones activas</display-name>
+    <servlet-name>SesionesActivas</servlet-name>
+    <servlet-class>hibernateservlets.SesionesActivas</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SesionesActivas</servlet-name>
+    <url-pattern>/SesionesActivas</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>Para Listar todos los departamentos</description>
+    <display-name>Listar departamentos</display-name>
+    <servlet-name>ListaDepartamentos</servlet-name>
+    <servlet-class>hibernateservlets.ListaDepartamentos</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListaDepartamentos</servlet-name>
+    <url-pattern>/ListaDepartamentos</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>Para Ir a mi Github</description>
+    <display-name>Utilizar Send Redirect</display-name>
+    <servlet-name>ServletRedirect</servlet-name>
+    <servlet-class>hibernateservlets.ServletRedirect</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletRedirect</servlet-name>
+    <url-pattern>/ServletRedirect</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>Para Utilizar Hibernate</description>
+    <display-name>Busqueda de empleados</display-name>
+    <servlet-name>hibernateservlet</servlet-name>
+    <servlet-class>hibernateservlets.hibernateservlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hibernateservlet</servlet-name>
+    <url-pattern>/hibernateservlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>Subir Sueldo utilizando hibernate</description>
+    <display-name>Incrementar salarios empleados</display-name>
+    <servlet-name>SubirSueldo</servlet-name>
+    <servlet-class>hibernateservlets.SubirSueldo</servlet-class>
+    <init-param>
+      <param-name>porcentaje</param-name>
+      <param-value>1.2</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubirSueldo</servlet-name>
+    <url-pattern>/SubirSueldo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>Para Utilizar JDBC</description>
+    <display-name>Busqueda de empleados</display-name>
+    <servlet-name>BuscarEmpleado</servlet-name>
+    <servlet-class>hibernateservlets.BuscarEmpleado</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BuscarEmpleado</servlet-name>
+    <url-pattern>/BuscarEmpleado</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>Filtro</filter-name>
+    <filter-class>pruebafiltros.Filtro</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>Filtro</filter-name>
+    <url-pattern>/hibernateservlet</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>FiltroJDBC</filter-name>
+    <filter-class>pruebafiltros.FiltroJDBC</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>FiltroJDBC</filter-name>
+    <url-pattern>/BuscarEmpleado</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>FiltroControlAcceso</filter-name>
+    <filter-class>pruebafiltros.FiltroControlAcceso</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>FiltroControlAcceso</filter-name>
+    <url-pattern>/Autenticacion</url-pattern>
+    <url-pattern>/BuscarEmpleado</url-pattern>
+    <url-pattern>/EmpleadosPorDepartamento</url-pattern>
+    <url-pattern>/ServletRedirect</url-pattern>
+    <url-pattern>/SesionesActivas</url-pattern>
+    <url-pattern>/SLogout</url-pattern>
+    <url-pattern>/SubirSueldo</url-pattern>
+  </filter-mapping>
+  <listener>
+    <listener-class>pruebaslisteners.HttpSessionListenerDiego</listener-class>
+  </listener>
+  <listener>
+    <listener-class>pruebaslisteners.ServletContextListenerDiego</listener-class>
+  </listener>
+  <listener>
+    <listener-class>pruebaslisteners.ServletRequestListenerDiego</listener-class>
+  </listener>
+  <session-config>
+    <session-timeout>2</session-timeout>
+  </session-config>
+</web-app>

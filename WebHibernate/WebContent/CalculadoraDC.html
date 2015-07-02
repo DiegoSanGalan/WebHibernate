@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Calculadora Dígito de Control</title>
+</head>
+<body>
+<p><font size = 7><b>Calculadora del Dígito de Control Bancario</b></font></p>
+<p><font size = 5><b> Número Entidad :</b></font></p>
+<form action="ObtenerDC" method="get">
+   <input type= "number" min = "0" max = "9999" placeholder = "4 dígitos" name="entidad"/>
+   <p><font size = 5><b> Número Oficina:</b></font></p>
+   <input type="number" min = "0" max = "9999" placeholder = "4 dígitos" name="oficina"/>
+   
+   <p><font size = 5><b> Número Cuenta:</b></font></p>
+   <input type="number" min = "0" max = "9999999999" placeholder = "10 dígitos" name="cuenta"/>
+   <input type="submit" name="enviar"/>
+   
+</form>
+
+</body>
+</html>
