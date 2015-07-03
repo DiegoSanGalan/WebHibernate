@@ -228,6 +228,11 @@ public class Operaciones{
 		return listEmp2DTO;
 	}
 	
+	/**
+	 * Método Hibernate para recuperar un empleado de la base de datos buscado por ID
+	 * @param id
+	 * @return Employee
+	 */
 	public Employees obtenerEmpleado (Object id)
 	{
 		Employees empDTO = new Employees();
@@ -255,6 +260,11 @@ public class Operaciones{
 		return empDTO;
 	}
 	
+	/**
+	 * Método para comprobar que el usuario existe en la base de datos.
+	 * @param id
+	 * @return Usuarios
+	 */
 	public Usuarios comprobarUsuario(Object id)
 	{
 		Usuarios userDTO = new Usuarios();

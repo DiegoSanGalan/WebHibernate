@@ -9,21 +9,10 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-  <!--  OTRA MANERA DE ACCEDER AL SERVLET ERROR 
-  <error-page>
-    <error-code>404</error-code>
-    <location>/ServletError</location>
-  </error-page>
-  -->
- 
-  
   <error-page>
     <exception-type>javax.servlet.ServletException</exception-type>
     <location>/ServletError</location>
   </error-page>
- 
-  
   <servlet>
     <description>Servlet para controlar los errores</description>
     <display-name>ServletError</display-name>
@@ -34,10 +23,7 @@
     <servlet-name>ServletError</servlet-name>
     <url-pattern>/ServletError</url-pattern>
   </servlet-mapping>
-  
-  
-  <!-- SERVLET PARA COMPARAR COMO HACER LO MISMO QUE EN EL .JSP EJEMPLO -->
-   <servlet>
+  <servlet>
     <description>Mostrar Hola Mundo</description>
     <display-name>MostrarHolaMundo</display-name>
     <servlet-name>MostrarHolaMundo</servlet-name>
@@ -46,6 +32,19 @@
   <servlet-mapping>
     <servlet-name>MostrarHolaMundo</servlet-name>
     <url-pattern>/MostrarHolaMundo</url-pattern>
+  </servlet-mapping>
+  
+
+  
+   <servlet>
+    <description>Servlet para Buscar Empleado Hibernate MVC por id</description>
+    <display-name>BuscarEmpleadoMVC</display-name>
+    <servlet-name>BuscarEmpleadoMVC</servlet-name>
+    <servlet-class>mvcservlets.BuscarEmpleadoMVC</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BuscarEmpleadoMVC</servlet-name>
+    <url-pattern>/BuscarEmpleadoMVC</url-pattern>
   </servlet-mapping>
   
   
@@ -173,19 +172,6 @@
     <servlet-name>SubirSueldo</servlet-name>
     <url-pattern>/SubirSueldo</url-pattern>
   </servlet-mapping>
-  
-  <!-- DECLARACION DEL JSP -->
-  <servlet>
-    <description></description>
-    <display-name>Ejemplo</display-name>
-    <servlet-name>Ejemplo</servlet-name>
-    <jsp-file>/JSP/Ejemplo.jsp</jsp-file>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Ejemplo</servlet-name>
-    <url-pattern>/Ejemplo</url-pattern>
-  </servlet-mapping>
-  
   <filter>
     <filter-name>Filtro</filter-name>
     <filter-class>pruebafiltros.Filtro</filter-class>
@@ -228,6 +214,4 @@
   <session-config>
     <session-timeout>2</session-timeout>
   </session-config>
-  
-  
 </web-app>
