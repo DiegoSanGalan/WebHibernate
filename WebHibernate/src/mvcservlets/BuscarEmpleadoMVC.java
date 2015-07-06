@@ -61,9 +61,21 @@ public class BuscarEmpleadoMVC extends HttpServlet {
 			//nombre de atributo que en la .jsp a la que llamamos
 		
 		// redirecciono a la página .jsp para mostrarlo.
-		req.getRequestDispatcher("/MostrarEmpleadoMVC.jsp").forward(req, resp);
+		//req.getRequestDispatcher("/MostrarEmpleadoMVC.jsp").forward(req, resp);
 		//resp.sendRedirect("MostrarEmpleadoMVC.jsp"); // si lo envió asi no funcionaría porque se 
 					//perderian los datos almacenados en el "saco" del request
+		
+		// USANDO Expresion Languaje (EL) redirecciono a la página .jsp para mostrarlo.
+		req.getRequestDispatcher("/recuperarempleadoEL.jsp").forward(req, resp);
+		//resp.sendRedirect("MostrarEmpleadoMVC.jsp"); // si lo envió asi no funcionaría porque se 
+		//perderian los datos almacenados en el "saco" del request
+		
+		
+		
+		
+		
+		
+		
 		}
 		else
 		{

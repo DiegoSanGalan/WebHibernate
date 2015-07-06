@@ -65,38 +65,46 @@ public class EmpleadosPorDepartamento extends HttpServlet {
 		List<Departments> listDpto = new ArrayList<Departments>();
 		
 		listEmpleados = oper.obtenerEmpleadosPorDepartamento(dpto);
-		listDpto = oper.listaDepartamentos();
-		
-		Departments dep = new Departments();
-		String nombreDpto = "";
-		Iterator<Departments> it = listDpto.iterator();
-		boolean salir = false;
-		
-		//Para obtener el nombre del departamento por id
-		while (it.hasNext() && (salir==false))
+		if (listEmpleados.size()==0)
 		{
-			dep = it.next();
-			if (dpto.equals(""+dep.getDepartmentId()))
+			resp.sendRedirect("errorempleadopordepartamento.html"); //le envio a un .html de error.
+		}
+		else
+		{
+			listDpto = oper.listaDepartamentos();
+			
+			Departments dep = new Departments();
+			String nombreDpto = "";
+			Iterator<Departments> it = listDpto.iterator();
+			boolean salir = false;
+			
+			//Para obtener el nombre del departamento por id
+			while (it.hasNext() && (salir==false))
 			{
-				nombreDpto = dep.getDepartmentName();
-				salir = true;
+				dep = it.next();
+				if (dpto.equals(""+dep.getDepartmentId()))
+				{
+					nombreDpto = dep.getDepartmentName();
+					salir = true;
+				}
 			}
+			imprimirTablaEmpleadosJSP (nombreDpto, listEmpleados, resp, req);
+			
+			
+			
+			
 		}
 		
 		
+		
 		// utilizo éste método para imprimir una tabla con los empleados del departamento
-		// elegido en el servlet.
+		// elegido en el servlet ListaDepartamentos.
+		
 		//imprimirTablaEmpleados(nombreDpto, listEmpleados, resp);
 		
 		
 		// me creo otro método para hacerlo reenviando a un .jsp
-		imprimirTablaEmpleadosJSP (nombreDpto, listEmpleados, resp, req);
-		
-		
-		
-		
-		
-							
+	
 	}
 
 	/**
@@ -129,18 +137,11 @@ public class EmpleadosPorDepartamento extends HttpServlet {
 		}
 		else 
 		{
-			resp.sendRedirect("ErrorEmpleado.html"); //le envio a un .html de error.
+		log.info("El listado de empleados está en null");
 		}
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 
+	
 	/**
 	 * Método para generar una tabla con los empleados del departamento elegido en el select.
 	 * @param nombreDpto
