@@ -127,7 +127,9 @@ public class EmpleadosPorDepartamento extends HttpServlet {
 			
 			//meto el objeto listaEmpleados en la request para poder acceder desde el .jsp llamado
 			req.setAttribute("listaemp", listEmpleados); // hay que utilizar el mismo 
-			//nombre de atributo que en la .jsp a la que llamamos	
+			//nombre de atributo que en la .jsp a la que llamamos
+			
+			nombreDpto = nombreDpto.toUpperCase();
 			req.setAttribute("nombredep", nombreDpto);
 			
 			// redirecciono a la página .jsp para mostrarlo.
