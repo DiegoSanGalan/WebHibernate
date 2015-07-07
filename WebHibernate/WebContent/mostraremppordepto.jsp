@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
-<%@ page import = "clasesDTOAutogeneradas.Employees" %>
+<%@ page import = "clasesDTOAutogeneradas.Employees, services.employees.Operaciones, clasesDTOAutogeneradas.Departments" %>
 <%@ page import = "java.util.ArrayList" %>
-
-<%@taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@ page import="java.util.*" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 
@@ -12,23 +11,35 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Mostrar empleados</title>
 </head>
 <body>
 <!-- tenemos que usar el mismo nombre de variable que el que ponemos en el Servlet -->
 
-<% 
-ArrayList<Employees> listEmp = (ArrayList<Employees>)request.getAttribute("listaemp");
-String nombreDpto = (String)request.getAttribute("nombredep");
-
-%>
 
 <p>NOMBRE DEL DEPARTAMENTO:  </p>
-<%=nombreDpto%>
+<c:out value = "${nombredep}"></c:out>
 
-<% 
+<c:forEach items="${listaemp}" var="emp" >
+<ul>
+	<li>
+	<p><b>EMPLEADO: </b></p>
+	<p>NOMBRE: </p>
+		<c:out value="${emp.firstName}"></c:out>
+	<p>APELLIDO: </p>
+		<c:out value="${emp.lastName}"></c:out>
+	<p>EMAIL: </p>
+		<c:out value="${emp.email}"></c:out>
+	<p>SALARIO: </p>
+		<c:out value="${emp.salary}"></c:out>
+	</li>
+</ul>	
+</c:forEach>
+
+
+<%-- 
 for (Employees emp : listEmp ) 
-{%>
+{
 	
 <ul>
 	<li>
@@ -49,7 +60,7 @@ for (Employees emp : listEmp )
 	
 <%}
 %>
-
+--%>
 
 </body>
 </html>
