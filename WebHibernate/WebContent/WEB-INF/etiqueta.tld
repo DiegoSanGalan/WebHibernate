@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+    <description>Pequeño ejemplo de etiquetas personalizadas</description>
+    <tlib-version>1.0</tlib-version>
+    <short-name>mt</short-name>
+    <uri>esto es solo un id lógico</uri>
+    <tag>
+        <description>Mi Hola Mundo Tag!</description>
+        <name>departamentos</name>
+        <tag-class>tablibpersonal.EmpleadosPorDepartamento</tag-class>
+        <body-content>empty</body-content><!-- el cuerpo estará vacío -->
+        <attribute>  
+			<name>id</name> <!-- recibo un atributo, aunque no es obligatorio -->
+			<required>true</required>
+		</attribute>
+    </tag>
+</taglib>
