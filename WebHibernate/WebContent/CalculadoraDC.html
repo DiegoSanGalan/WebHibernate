@@ -2,17 +2,19 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<!-- <link rel="stylesheet" type="text/css" href="CSS/tablas.css"/>   -->
+<link rel="stylesheet" type="text/css" href="CSS/style.css"/>
 <title>Calculadora Dígito de Control</title>
 </head>
 <body>
-<p><font size = 7><b>Calculadora del Dígito de Control Bancario</b></font></p>
-<p><font size = 5><b> Número Entidad :</b></font></p>
+<h2>Calculadora del Dígito de Control Bancario</h2>
+<h2>Número Entidad: </h2>
 <form action="ObtenerDC" method="get">
    <input type= "number" min = "0" max = "9999" placeholder = "4 dígitos" name="entidad"/>
-   <p><font size = 5><b> Número Oficina:</b></font></p>
+   <h2> Número Oficina: </h2>
    <input type="number" min = "0" max = "9999" placeholder = "4 dígitos" name="oficina"/>
    
-   <p><font size = 5><b> Número Cuenta:</b></font></p>
+   <h2>Número Cuenta: </h2>
    <input type="number" min = "0" max = "9999999999" placeholder = "10 dígitos" name="cuenta"/>
    <input type="submit" name="enviar"/>
    

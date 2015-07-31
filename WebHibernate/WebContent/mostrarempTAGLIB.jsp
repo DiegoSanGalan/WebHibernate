@@ -5,6 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<!-- <link rel="stylesheet" type="text/css" href="CSS/tablas.css"/>   -->
+<link rel="stylesheet" type="text/css" href="CSS/style.css"/>
 <title>Tag personalizado para mostrar los empleados por id</title>
 </head>
 <body>
